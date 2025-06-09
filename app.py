@@ -37,6 +37,10 @@ class Feedback(db.Model):
     feedback_text = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
+# Create tables on app start (works for local & deployment)
+with app.app_context():
+    db.create_all()
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -83,12 +87,10 @@ def signup():
 @login_required
 def dashboard():
     if request.method == 'POST':
-        # Your encryption logic here (replace with actual logic)
         message = request.form.get('message')
         algorithm = request.form.get('algorithm')
         encrypted_message = f"Encrypted({message}) with {algorithm}"  # placeholder
 
-        # Save history
         history = History(user_id=current_user.id, message=message, encrypted_message=encrypted_message, algorithm=algorithm)
         db.session.add(history)
         db.session.commit()
@@ -122,6 +124,4 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
