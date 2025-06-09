@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 text-success">Your Encryption History</h2>
+{% if records %}
+  <table class="table table-striped table-hover shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>Timestamp</th>
+        <th>Original Message</th>
+        <th>Encrypted Message</th>
+        <th>Algorithm</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rec in records %}
+      <tr>
+        <td>{{ rec.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td>{{ rec.message }}</td>
+        <td>{{ rec.encrypted_message }}</td>
+        <td>{{ rec.algorithm }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>You have no history yet. Go to <a href="{{ url_for('dashboard') }}">Dashboard</a> to encrypt messages.</p>
+{% endif %}
+{% endblock %}

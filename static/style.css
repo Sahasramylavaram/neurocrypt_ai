@@ -1,0 +1,82 @@
+
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+}
+
+footer {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #fff !important;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  color: #d0d0ff !important;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.nav-user {
+  font-weight: 700;
+  font-style: italic;
+  color: #ffdd57;
+}
+
+h2 {
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #00000099;
+}
+
+.btn-primary {
+  background: #6a11cb;
+  border: none;
+  box-shadow: 0 4px 10px #6a11cbaa;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #2575fc;
+  box-shadow: 0 6px 12px #2575fccc;
+}
+
+.btn-success {
+  background: #11998e;
+  border: none;
+  box-shadow: 0 4px 10px #11998eaa;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: #38ef7d;
+  box-shadow: 0 6px 12px #38ef7dcc;
+}
+
+.btn-info {
+  background: #17a2b8;
+  border: none;
+  box-shadow: 0 4px 10px #17a2b8aa;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background: #33c1d6;
+  box-shadow: 0 6px 12px #33c1d6cc;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 0.075) !important;
+}
